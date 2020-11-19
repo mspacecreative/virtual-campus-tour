@@ -1958,7 +1958,7 @@
 			
 			<div class="modalInner">
 				<div id="quadTour" class="iframeContainer virtualTour">
-					
+					<iframe src="tours/quad/index.htm" frameborder="0" title="The Quad"></iframe>
 				</div>
 			</div>
 			<div class="innerContainer fixedPosition">
@@ -2087,48 +2087,18 @@
         <!--<script>
 			document.domain = "mspacecreative.com";
 		</script>-->
-		<!-- VIMEO API
+		
+		<!-- VIMEO API -->
 		<script src="https://player.vimeo.com/api/player.js"></script>
-		 -->
+		
+		<!-- FONTAWESOME -->
 		<script src="https://use.fontawesome.com/6ccd600e51.js" type="text/javascript"></script>
+		
+		<!-- YOUTUBE API -->
 		<script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>
-		<!-- ADD CLASS ON SCROLL
-		<script src="assets/js/class-on-scroll.js" type="text/javascript"></script> -->
+		
 		<!-- ANIMATE ON SCROLL -->
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		
-		<!--<script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>
-		<script>
-			/*
-			var tag = document.createElement('script');
-
-		    tag.src = "https://www.youtube.com/iframe_api";
-		    var firstScriptTag = document.getElementsByTagName('script')[0];
-		    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-			*/
-		
-		    var player;
-		    function onYouTubeIframeAPIReady() {
-				player = new YT.Player( 'video6', {
-					events: {
-						'onReady': onPlayerReady,
-						'onStateChange': onPlayerStateChange
-					}
-				});
-			}
-			
-			function onPlayerReady(event) {
-		        event.target.playVideo();
-		    }
-			
-			//var done = false;
-		    function onPlayerStateChange(event) {
-		        if (event.data == YT.PlayerState.ENDED) {
-		            alert('video is done');
-		        }
-		    }
-		</script>
-		-->
 		
 		<!-- CUSTOM SCRIPTS -->
         <script src='assets/js/main.js'></script>

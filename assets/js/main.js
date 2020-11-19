@@ -88,6 +88,7 @@
 		modalVisible.find('.ytIframe').prop('src','');
 		modalVisible.find('.ytIframe').prop('src', replaceURL);
 		
+		/*
 		var frames = window.frames;
 		for (var i = 0; i < frames.length; i++) { 
 			var sounds = frames[i].document.getElementsByTagName('audio');
@@ -95,19 +96,11 @@
 				sounds[j].stop();
 			}
 		}
+		*/
+		var iframe = $('iframe').get(0);
+	    var player = new Vimeo.Player(iframe);
+	    player.pause();
 
-	});
-	
-	$(document).ready(function(){
-
-	    
-	        
-			$.post("https://smu-virtual-tour.mspacecreative.com/tours/quad/index.htm", function(data){
-
-		    	$("#quadTour").html(data).fadeIn();
-		
-			});
-	
 	});
 	
 	$('.navigation li a').click(function() {
