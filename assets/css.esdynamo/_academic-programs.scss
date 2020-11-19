@@ -1,0 +1,34 @@
+#academic-programs .sectionMargin {
+	margin-top: 2em;
+}
+#academic-programs.section {
+	padding-top: 50px;
+}
+#academic-programs {
+	/*background-image: url(../img/student-smiling-in-front-of-mcnally-.jpg);
+	box-shadow: inset 0px 21px 20px -20px #666, inset 0px -21px 20px -20px #666;*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	padding: 80px 0;
+}
+.schoolOfBusiness {
+	position: relative;
+    left: -85px;
+    text-align: center;
+    max-width: 200px;
+    top: -10px;
+}
+.scienceAndEngineering {
+	position: relative;
+	left: 180px;
+	top: 20px;
+}
+.artsAndSciences {
+	max-width: 200px;
+    text-align: center;
+    position: relative;
+    right: 120px;
+    top: 30px;
+}

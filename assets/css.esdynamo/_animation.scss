@@ -1,0 +1,99 @@
+// CENTER LINE
+.percentage {
+	position: fixed;
+	top: 0;
+	width: 10px;
+	color: $brandRed;
+	margin: 0;
+	padding: 0;
+	left: 50%;
+	margin-left: -5px;
+	transition: .25s ease-in-out;
+	display: none;
+}
+[data-scrollPercentage] .percentage {
+	display: inline-block;
+	background-color: $brandRed;
+	height: 0;
+	display: none;
+}
+.percentage .fa-chevron-down {
+	top: calc(100% - 35px);
+    position: absolute;
+    font-size: 3em;
+    left: 50%;
+    margin-left: -23.5px;
+    height: 40px;
+    display: block;
+}
+.percentage .fa-chevron-down::before {
+	display: block;
+	height: 50px;
+	line-height: 50px;
+}
+
+// BORDER SPIN ON PORTALS
+/*body .portalImgContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.portalImgContainer::before,
+.portalImgContainer::after {
+  box-sizing: inherit;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.portalImgContainer::before,
+.portalImgContainer::after {
+  top: 0;
+  left: 0;
+}
+
+.portalContainer.blue img {
+	border: none;
+}
+
+.portalImgContainer::before {
+  border: 10px solid transparent;
+}
+
+.portalImgContainer img {
+	padding: 1em!important;
+}
+
+.in-viewport .portalImgContainer::before {
+  border-top-color: #0eb7da;
+  border-right-color: #0eb7da;
+  border-bottom-color: #0eb7da;
+  border-left-color: #0eb7da;
+  transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.10s, border-bottom-color 0.15s linear 0.20s;
+}
+
+portalImgContainer::after {
+  border: 0 solid transparent;
+}
+
+.in-viewport .portalImgContainer::after {
+  border-top: 10px solid #0eb7da;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  transform: rotate(270deg);
+  transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+}
+
+.portalImgContainer {
+  border-radius: 100%;
+  box-shadow: none;
+}
+
+.portalContainer img::before,
+.portalContainer img::after {
+  border-radius: 100%;
+}
+*/

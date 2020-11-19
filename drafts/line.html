@@ -1,0 +1,211 @@
+<div class='contents-wrapper'>
+    <div class="contents">&nbsp;</div>
+</div>
+
+<button class="spin circle">Spin Circle</button>
+
+<div id="container">
+	<img style="position: relative; object-fit:cover; height: 100%; width: 100%; border-radius: 100%;" src="https://mspacecreative.com/smu-virtual-tour/virtual-campus-tour/assets/img/students-sitting-on-top-of-SMU-sign-infront-of-mcnally-main.jpg">
+    <div id="halfclip">
+        <div class="halfcircle" id="clipped">
+        </div>
+    </div>
+    <div class="halfcircle" id="fixed">
+    </div>
+</div>
+
+<style>
+* {
+	box-sizing: border-box;
+}
+.contents-wrapper,
+.contents {
+  display: inline-block;
+}
+
+.contents {
+  height: 20px;
+}
+
+.contents-wrapper .contents  {
+	/*transform: rotate(-400deg);*/
+	transform-origin: top right;
+}
+
+.circleContainer.playing .circle {
+	border-color: #333;
+}
+
+.circle {
+	border: 10px solid transparent;
+	border-radius: 100%;
+	transition: all 3s ease-in-out;
+	width: 400px;
+	height: 400px;
+}
+
+.contents {
+	width: 0%;
+	transition: width 1s ease-in-out;
+	background-color: #ddd;
+}
+
+.contents-wrapper.playing .contents {
+	width: 300px;
+}
+
+button {
+  border: 0;
+  position: relative;
+  display: block;
+}
+
+button::before,
+button::after {
+  box-sizing: inherit;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.spin {
+  height: 200px;
+  width: 200px;
+}
+
+.spin::before,
+.spin::after {
+  top: 0;
+  left: 0;
+}
+
+.spin::before {
+  border: 2px solid transparent;
+}
+
+.spin.playing::before {
+  border-top-color: #0eb7da;
+  border-right-color: #0eb7da;
+  border-bottom-color: #0eb7da;
+  transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.10s, border-bottom-color 0.15s linear 0.20s;
+}
+
+.spin::after {
+  border: 0 solid transparent;
+}
+
+.spin.playing::after {
+  border-top: 2px solid #0eb7da;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  transform: rotate(270deg);
+  transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+}
+
+.circle {
+  border-radius: 100%;
+  box-shadow: none;
+}
+
+.circle::before,
+.circle::after {
+  border-radius: 100%;
+}
+
+body {
+  background: repeating-linear-gradient(45deg, white 0px, lightblue 100px);
+  height: 500px;
+  background-size: 500px 500px;
+  background-repeat: no-repeat;
+}
+
+html {
+  height: 100%;
+}
+
+#container {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+
+#halfclip {
+    width: 50%;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    overflow: hidden;
+    transform-origin: left center;
+	top: 0;
+}
+
+#container.playing #halfclip {
+    animation: cliprotate .5s 1;
+    transform: rotate(180deg);
+} 
+
+@keyframes cliprotate {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(0deg);}
+  50.01% {transform: rotate(180deg);}
+  100% {transform: rotate(180deg);}
+}
+
+.halfcircle {
+  box-sizing: border-box;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+  border: solid 10px transparent;
+   border-top-color: blue;
+   border-left-color: blue;
+   border-radius: 50%;
+}
+
+#clipped {
+    width: 200%;
+    transform: rotate(-45deg);
+}
+#container.playing #clipped {
+    transform: rotate(135deg);
+    animation: rotate .25s linear 2;
+}
+
+
+@keyframes rotate {
+  0% {transform: rotate(-45deg);}
+  100% {transform: rotate(135deg);}
+}
+
+
+#fixed {
+  width: 100%;
+    transform: rotate(135deg);  
+    opacity: 0;
+	top: 0;
+}
+
+#container.playing #fixed {
+    opacity: 1;
+    animation: showfixed .5s 1;
+}
+
+
+
+@keyframes showfixed {
+  0% {opacity: 0;}
+  49.99% {opacity: 0;}
+  50% {opacity: 1;}
+ 100% {opacity: 1;}
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	window.setTimeout(function(){
+		var $this = $('.contents-wrapper, .spin, #container').addClass('playing');
+	    $this.addClass('finished');
+	}, 1000);
+</script>

@@ -1,0 +1,121 @@
+.modal {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background-color: rgba(0,0,0,.95);
+	cursor: pointer;
+	//height: calc(100% - 55px);
+}
+
+// FIX HTML WHILE OVERLAY IS VISIBLE
+html.modalOpen {
+	overflow-y: hidden;
+}
+.modalInner {
+	width: 100%;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	/*max-width: 1080px;*/
+	margin: auto;
+	//padding: 0 2em;
+}
+.iframeContainer {
+	height: 0;
+	position: relative;
+	padding-bottom: 56.25%;
+	/*max-width: 1280px;
+	margin-right: auto;
+	margin-left: auto;*/
+}
+.iframeContainer.anamorphic {
+	/*height: 100%;
+	width: 100%;*/
+	padding-bottom: 42.5%;
+	
+}
+.iframeContainer.virtualTour {
+	height: 100vh;
+	padding-bottom: 0;
+}
+.iframeContainer iframe {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+// CLOSE MODAL BUTTON
+.closeModalButton {
+	border: none;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	background-color: transparent;
+	outline: none;
+	right: 2em;
+	top: 10px;
+	cursor: pointer;
+}
+.closeModalButton span {
+	position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+}
+.closeModalButton span:nth-child(2) {
+	transform: rotate(-45deg);
+}
+/*
+.modalOpen .portalContainer, 
+.modalOpen .nextSection,
+.modalOpen .sectionBlurb {
+	opacity: 0;
+	transition: 0.25s ease-in-out;
+}
+*/
+
+.modal .innerContainer {
+	max-width: 100%;
+	width: 100%;
+	height: 40px;
+	top: 10px;
+}
+
+/*
+.innerContainer.fixedPosition {
+	display: none;
+}
+*/
+
+/*
+.open ~ .innerContainer.fixedPosition {
+	display: block;
+}
+*/
+
+.modal .innerContainer.fixedPosition {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 999999;
+	height: 55px;
+	text-align: right;
+	//background-color: rgba(0, 0, 0, 0.95);
+	width: 100%;
+	max-width: 100%;
+	top: auto;
+	margin: 0;
+}

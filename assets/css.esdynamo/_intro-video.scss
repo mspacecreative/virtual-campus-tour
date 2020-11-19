@@ -1,0 +1,42 @@
+/*
+#intro-video {
+	background-image: url(../assets/img/circles.jpg);
+	background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top left;
+}
+*/
+
+#intro-video .sectionMargin {
+	/*background-image: url('../img/students-chatting-on-the-quad-x2.jpg');*/
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/*.blueBgLight::after {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	content: "";
+	background-color: $brandBlue;
+	opacity: .1;
+}*/
+.sectionMargin {
+	position: relative;
+	z-index: 2;
+}
+
+#intro-video .portalContainer img {
+	border: none;
+}
+#intro-video .largePortal {
+	transition-delay: 1s;
+}
+#intro-video .smallPortal {
+	transition-delay: 2s;
+}
+body .blueBgLight {
+	background-color: transparent;
+}

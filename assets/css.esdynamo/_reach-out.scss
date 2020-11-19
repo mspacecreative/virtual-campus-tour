@@ -1,0 +1,62 @@
+.ctaContainer {
+	margin-bottom: 50px;
+}
+.ctaContainer img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 100%;
+	box-shadow: 0 5px 10px #999;
+}
+.ctaImgContainer {
+	border-radius: 100%;
+	width: 100px;
+	height: 100px;
+	flex-basis: 100px;
+	max-width: 100px;
+}
+.ctaContainer.end-lg {
+	text-align: left;
+}
+.alignSelfBottom {
+	align-self: flex-end;
+}
+.negMarginBottom50 {
+	margin-bottom: -50px;
+}
+.displayTable {
+	display: table;
+	text-align: center;
+}
+.displayTableCell {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.ctaContainer h3 {
+	margin-top: 0;
+}
+.ctaContainer h3::after {
+	content: "\f101";
+	font-family: fontAwesome;
+	margin-left: 5px;
+}
+.ctaContainer a, .keepMeUpdated {
+	color: $brandBlue;
+	text-decoration: none;
+}
+.keepMeUpdated > div {
+	background-color: #fff;
+}
+.innerPortalSmall {
+	transition: 0.25s ease-in-out;
+}
+.keepMeUpdated .innerPortalSmall {
+	transition: 0.25s ease-in-out;
+	background-color: #fff;
+}
+.keepMeUpdated:hover .innerPortalSmall {
+	transition: 0.25s ease-in-out;
+	background-color: $brandRed;
+}

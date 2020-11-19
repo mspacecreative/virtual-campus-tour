@@ -1,0 +1,48 @@
+// PORTALS
+.centerPortals {
+	padding-top: 180px;
+}
+.centerPortals .mediumPortal {
+	margin-top: 50px;
+}
+.centerPortals .animatedLineWrapper.firstLine {
+	top: auto;
+	bottom: 45px;
+	transform: rotate(-90deg);
+	left: calc(50% + 4px);
+}
+#living-in-residence .staticImg {
+	top: 200px;
+}
+.centerPortals .mediumPortal {
+	
+}
+#living-in-residence .artsContainer .portalContainer.firstPortal {
+	top: -20px;
+}
+#living-in-residence .artsContainer .animatedLineWrapper.firstLine {
+	top: 100px;
+}
+#living-in-residence .artsContainer.secondPortal {
+	top: 200px;
+}
+#living-in-residence .animatedLineWrapper.lowerRightLine {
+	top: 160px;
+}
+#living-in-residence {
+	/*background-image: url(../img/Residence-2.jpg);*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	padding-bottom: 80px;
+}
+#living-in-residence .sectionMargin {
+	/*background-image: url(../img/circles-top-left.png);*/
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: top right 200px;
+	background-blend-mode: multiply;
+}
+#living-in-residence .sectionBlurb {
+	padding-top: 80px;
+}

@@ -1,0 +1,271 @@
+// PORTAL FLOATING
+@keyframes float {
+	0% {
+		//box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		//box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		//box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+.innerPortal, .innerPortalLarge, .innerPortalSmall, .portalImgContainer {
+	/*opacity: 0;
+	visibility: hidden;
+	transition: opacity 1s ease-in-out 0s;*/
+	border-radius: 100%;
+	overflow: hidden;
+}
+.blueBorder, .greenBorder, .maroonBorder {
+	border-width: 15px;
+	border-style: solid;
+}
+/*.in-viewport .innerPortal, .innerPortalLarge.in-viewport, .innerPortalSmall.in-viewport, .in-viewport .portalImgContainer {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 1s ease-in-out 0s;
+}
+.innerPortal.in-viewport {
+	opacity: 1;
+	visibility: visible;
+	transition: 1s ease-in-out;
+}*/
+.in-viewport .portalImgContainer, .innerPortal.in-viewport {
+	transition-delay: 0.5s;
+}
+.innerPortalSmall.in-viewport {
+	transition-delay: 1s;
+}
+.innerPortal {
+	width: 500px;
+	height: 500px;
+	border-radius: 100%;
+	animation: float 6s ease-in-out infinite;
+	overflow: hidden;
+	border: 15px solid #fff;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+}
+.innerPortalMedium {
+	width: 400px;
+	height: 400px;
+	border-radius: 100%;
+    overflow: hidden;
+	animation: float 5s ease-in-out infinite;
+}
+.blueBorder, .innerPortalSmall.blueBorder {
+	border-color: $brandBlue;
+}
+.greenBorder, .innerPortalSmall.greenBorder {
+	border-color: $brandGreen;
+}
+.maroonBorder, .innerPortalSmall.maroonBorder {
+	border-color: $brandRed;
+}
+
+// PORTAL MAIN STYLES
+.relativePortal, .smallPortal.relativePortal {
+	position: relative;
+}
+.portalContainer, .portalContainer img {
+	border-radius: 100%;
+}
+.portalContainer img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	background-color: #fff;
+}
+
+.animatedLine {
+	height: 10px;
+}
+
+// FLEX DISPLAY
+.flexCenter {
+	display: flex;
+	justify-content: center;
+}
+.flexCenterCol {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.flexLeft {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+.flexRight {
+	display: flex;
+	justify-content: flex-end;
+}
+.alignSelfTop {
+	align-self: flex-start;
+}
+.flexDirectionColumn {
+	flex-direction: column;
+}
+
+// NEGATIVE MARGINS
+.negMarginTop150 {
+	margin-top: -150px;
+}
+
+// LARGE PORTALS
+.largePortal {
+	
+}
+
+.marginLeftAuto {
+	margin-left: auto;
+}
+
+// MEDIUM PORTALS
+.mediumPortal {
+	width: 350px;
+	height: 350px;
+}
+
+// VERTICAL ALIGN
+.alignBottom {
+	align-self: flex-end;
+}
+
+// SMALL PORTALS
+/*.smallPortal {
+	width: 250px;
+	height: 250px;
+}*/
+.upperRight {
+	align-self: flex-start;
+	margin-top: -100px;
+}
+.lowerLeft {
+	align-self: flex-end;
+	margin-bottom: -50px;
+}
+.lowerLeft {
+	bottom: 0;
+	left: 0;
+}
+.upperLeft {
+	top: 0;
+	left: 300px;
+}
+.lowerLeft {
+	bottom: 0;
+	left: 0;
+}
+
+// INNER PORTALS
+.innerPortalLarge {
+	width: 500px;
+	height: 500px;
+}
+.innerPortalSmall {
+	width: 250px;
+	height: 250px;
+	margin: auto;
+	animation: float 5s ease-in-out infinite;
+}
+
+// BUSINESS CONTAINER
+
+
+// ARTS CONTAINER
+
+
+// SCIENCE CONTAINER
+
+
+// INTRO VIDEO
+#intro-video .animatedLineWrapper.firstLine {
+	transform: rotate(-22deg);
+}
+
+// PORTAL OVERLAYS
+.portalContainer {
+	border-radius: 100%;
+	/*
+	background-color: #fff;
+	animation: float 6s ease-in-out infinite;
+	border: 20px solid #fff;*/
+}
+.portalImgContainer {
+	position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 100%;
+    z-index: 2;
+}
+.portalImgContainer img {
+	transition: 1s ease-in-out;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.portalImgContainer:hover > img {
+	transform: scale(1.1);
+	transition: 1s ease-in-out;
+}
+.portalImgContainer::before {
+	position: absolute;
+	height: calc(100% - 10px);
+    width: calc(100% - 10px);
+	content: "";
+	background-color: rgba(0,0,0,.25);
+	top: 0;
+	left: 0;
+	border-radius: 100%;
+	z-index: 1;
+	transition: 1s ease-in-out;
+	border: 5px solid #fff;
+
+}
+.portalImgContainer.blueOverlay::before {
+	background-color: rgba(90, 150, 175, 0.75);
+}
+.portalImgContainer:hover::before {
+	background-color: rgba(0, 0, 0, .75);
+	transition: 1s ease-in-out;
+}
+
+// PORTAL ICONS
+.iconContainer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80px;
+	height: 80px;
+	transform: translate(-50%,-50%);
+	transform-origin: 0 0;
+	z-index: 3;
+	transition: 1s ease-in-out;
+}
+.iconContainer svg {
+	fill: #fff;
+	transition: 1s ease-in-out;
+}
+.portalImgContainer:hover .iconContainer svg {
+	fill: $brandBeige;
+	transition: 1s ease-in-out;
+}
+.portalImgContainer:hover .iconContainer {
+	transform: scale(1.3) translate(-50%,-50%);
+	transition: 1s ease-in-out;
+}
+.smallPortal .portalImgContainer:hover .iconContainer {
+	transform: scale(1.1) translate(-50%,-50%);
+}

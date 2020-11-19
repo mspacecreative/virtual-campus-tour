@@ -1,0 +1,507 @@
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body {
+	margin: 0 0 66px;
+}
+.section {
+	min-height: 100vh;
+	display: table;
+	width: 100%;
+}
+.clearfix::after {
+	display: table;
+	content: "";
+	clear: both;
+}
+html, body {
+	overflow-x: hidden;
+}
+
+.autoMargins {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.maxColWidth, .maxColWidth400 {
+	max-width: 400px;
+}
+
+.sectionBlurb.col-sm-5 > .translucentBg::after, .sectionBlurb.col-sm-5 > .translucentBg::before {
+	display: none;
+}
+
+.marginTop50 {
+	margin-top: 50px;
+}
+
+// SPACING
+.sectionMargin {
+	margin: 4em 0;
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+}
+.row > .col.noPadding {
+	padding: 0;
+}
+.innerContainer {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	z-index: 2;
+}
+.innerContainer, .inner {
+	max-width: 1280px;
+	width: 100%;
+	padding: 0 2em;
+}
+.inner {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.imgContainer > img {
+	object-fit: cover;
+	min-height: 100%;
+	min-width: 100%;
+	border-radius: 100%;
+	padding: 1.5em;
+	background-color: #fff;
+}
+img {
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+	display: block;
+}
+.svgContainer, .svgContainer1 {
+	position: absolute;
+	z-index: 2;
+	width: 500px;
+    height: 500px;
+}
+.centerImg1 {
+	/*width: 500px;
+    height: 500px;*/
+	margin-left: auto;
+	margin-right: auto;
+}
+svg {
+	overflow: visible;
+}
+.svgContainer1 {
+	width: 500px;
+	height: 500px;
+	left: 50%;
+	margin-left: -250px;
+}
+.svgContainer2 {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 10%;
+    right: -30%;
+	z-index: 1;
+	transform: rotate(180deg);
+}
+.svgContainer3 {
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	top: -120px;
+    right: 0;
+	z-index: 3;
+}
+.svgContainer2.upto1280 {
+	top: 2%;
+    right: -25%;
+}
+.leftLine, .horLine {
+	fill: transparent;
+	stroke: #DCCEAB;
+	stroke-dasharray: 0;
+}
+.in-viewport.leftLine {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: dash 5s linear forwards;
+	animation-delay: 1s;
+	stroke-width: 8;
+}
+.svgContainer3 svg {
+	position: absolute;
+	z-index: 2;
+}
+.businessPortal1 .circle2, .businessPath .leftLine {
+	stroke: #6e0408;
+}
+.artsPath1 {
+	right: 50%;
+    margin-right: -165px;
+    top: 250px;
+    height: 20px;
+}
+#academic-programs .svgContainer3.artsPortal1 {
+	right: 20%;
+    left: auto;
+    top: 140px;
+}
+.svgContainer3.artsPortal1, .svgContainer3.artsPortal1 svg {
+	width: 200px;
+	height: 200px;
+}
+#academic-programs .svgContainer3.artsPortal2 {
+    top: 300px;
+    left: auto;
+    right: 0;
+}
+.circle, .circle2, .centerImg1, .svgContainer3 img {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 1s ease-in-out 0s;
+	fill: transparent;
+	stroke: #000000;
+	stroke-width: 10;
+}
+.svgContainer3 img {
+	padding: 1em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	height: 100%;
+	border-radius: 100%;
+	background-color: #fff;
+}
+.was-in-viewport .circle, .was-in-viewport.leftLine {
+	stroke-width: 8;
+}
+.circle {
+	stroke: #DCCEAB;
+	stroke-width: 8;
+}
+.circle2 {
+	stroke: #DCCEAB;
+	stroke-width: 8;
+}
+.circle {
+	fill: transparent;
+}
+.circle2 {
+	stroke-width: 18;
+	animation-delay: 1s;
+}
+.in-viewport .circle, .in-viewport .circle2, .in-viewport.centerImg1, .svgContainer3.in-viewport img {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 1s ease-in-out 0s;
+}
+.circle, .in-viewport .circle2, .in-viewport.centerImg1 {
+	transition-delay: 0.5s;
+}
+.in-viewport .circle2, .svgContainer3.in-viewport img {
+	transition-delay: 1s;
+}
+.splash > .inner {
+	position: static;
+}
+header {
+	width: 100%;
+    left: 0;
+	padding: 2em 0;
+}
+#arriving-at-smu .svgContainer3 {
+	right: auto;
+	left: 0;
+	top: auto;
+	bottom: -85px;
+}
+#arriving-at-smu .svgContainer2 {
+	bottom: 15%;
+    left: -30%;
+	top: auto;
+	right: auto;
+	transform: none;
+}
+#arriving-at-smu .in-viewport.leftLine, #academic-programs .in-viewport.horLine {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: dash 5s linear forwards;
+	animation-delay: 1s;
+	stroke-width: 8;
+}
+#arriving-at-smu .circle, #arriving-at-smu .leftLine, #arriving-at-smu .circle2 {
+	stroke: #ABB456;
+}
+.firstStaticLine {
+	display: none;
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.upTo1280 {
+	display: none;
+}
+
+.whiteBg {
+	background-color: #fff;
+}
+h1 {
+	font-size: 3em;
+	letter-spacing: -0.01em;
+}
+.splashBgImg h1 {
+	margin-top: 0.5em;
+}
+p {
+	line-height: 1.5em;
+}
+.noTopPadding {
+	padding-top: 0;
+}
+.noTopMargin {
+	margin-top: 0
+}
+.row {
+	margin-left: -15px;
+	margin-right: -15px;
+	display: flex;
+	align-items: center;
+}
+.row > .col {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.firstStaticLine {
+	position: absolute;
+	top: 0;
+	width: 15px;
+	background-color: #6E0408;
+	height: 100%;
+	left: 50%;
+	margin-left: -7.5px;
+}
+.siteTitle::after, .siteTitle::before, .splashBgImg::before, .splashBgImg::after {
+	position: absolute;
+	content: "";
+	border-radius: 100%;
+}
+.imgContainer {
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	border-radius: 100%;
+	top: 0;
+	left: 0;
+	position: relative;
+	margin: auto;
+}
+.imgContainer > img {
+	object-fit: cover;
+	min-height: 100%;
+	min-width: 100%;
+	border-radius: 100%;
+	padding: 1.5em;
+	background-color: #fff;
+}
+
+.displayBlock {
+	display: block;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+	display: block;
+}
+.svgContainer, .svgContainer1 {
+	position: absolute;
+	z-index: 2;
+	width: 500px;
+    height: 500px;
+}
+.centerImg1 {
+	/*width: 500px;
+    height: 500px;*/
+	margin-left: auto;
+	margin-right: auto;
+}
+svg {
+	overflow: visible;
+}
+.svgContainer1 {
+	width: 500px;
+	height: 500px;
+	left: 50%;
+	margin-left: -250px;
+}
+.svgContainer2 {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 10%;
+    right: -30%;
+	z-index: 1;
+	transform: rotate(180deg);
+}
+.svgContainer3 {
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	top: -120px;
+    right: 0;
+	z-index: 3;
+}
+.svgContainer2.upto1280 {
+	top: 2%;
+    right: -25%;
+}
+.leftLine, .horLine {
+	fill: transparent;
+	stroke: #DCCEAB;
+	stroke-dasharray: 0;
+}
+.in-viewport.leftLine {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: dash 5s linear forwards;
+	animation-delay: 1s;
+	stroke-width: 8;
+}
+.svgContainer3 svg {
+	position: absolute;
+	z-index: 2;
+}
+.businessPortal1 .circle2, .businessPath .leftLine {
+	stroke: #6e0408;
+}
+.artsPath1 {
+	right: 50%;
+    margin-right: -165px;
+    top: 250px;
+    height: 20px;
+}
+#academic-programs .svgContainer3.artsPortal1 {
+	right: 20%;
+    left: auto;
+    top: 140px;
+}
+.svgContainer3.artsPortal1, .svgContainer3.artsPortal1 svg {
+	width: 200px;
+	height: 200px;
+}
+#academic-programs .svgContainer3.artsPortal2 {
+    top: 300px;
+    left: auto;
+    right: 0;
+}
+.circle, .circle2, .centerImg1, .svgContainer3 img {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 1s ease-in-out 0s;
+	fill: transparent;
+	stroke: #000000;
+	stroke-width: 10;
+}
+.svgContainer3 img {
+	padding: 1em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	height: 100%;
+	border-radius: 100%;
+	background-color: #fff;
+}
+.was-in-viewport .circle, .was-in-viewport.leftLine {
+	stroke-width: 8;
+}
+.circle {
+	stroke: #DCCEAB;
+	stroke-width: 8;
+}
+.circle2 {
+	stroke: #DCCEAB;
+	stroke-width: 8;
+}
+.circle {
+	fill: transparent;
+}
+.circle2 {
+	stroke-width: 18;
+	animation-delay: 1s;
+}
+.in-viewport .circle, .in-viewport .circle2, .in-viewport.centerImg1, .svgContainer3.in-viewport img {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 1s ease-in-out 0s;
+}
+.circle, .in-viewport .circle2, .in-viewport.centerImg1 {
+	transition-delay: 0.5s;
+}
+.in-viewport .circle2, .svgContainer3.in-viewport img {
+	transition-delay: 1s;
+}
+.splash > .inner {
+	position: static;
+}
+header {
+	width: 100%;
+    left: 0;
+	padding: 2em 0;
+}
+
+// SECTION BACKGROUND COLOURS
+.blueBgLight {
+	background-color: rgba(90, 150, 175, .5);
+	
+}
+
+// ROWS AND COLUMNS
+.row.noGutter > .col {
+	padding: 0;
+}
+
+// LOADING OVERLAY
+.loadingPage {
+	width: 100%;
+	height: 100%;
+	z-index: 999999;
+	background-color: $brandRed;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.loadingPageText {
+	animation: blinker 1500ms linear infinite;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.loadingPageText h4 {
+	color: #fff;
+	font-size: 20px;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}

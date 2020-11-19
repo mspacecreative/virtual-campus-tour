@@ -1,0 +1,55 @@
+.button {
+	font-size: 13px;
+    padding: 0.5em 1em;
+	display: inline-block;
+	margin-top: -15px;
+	right: 80px;
+	top: 50%;
+	border-radius: 100px;
+	text-decoration: none;
+	position: absolute;
+	/*background-color: $brandBlue;*/
+}
+.nextStopModal, .modalMenuToggle {
+	font-size: 13px;
+    padding: 0.5em 1em;
+	display: inline-block;
+	border-radius: 100px;
+	text-decoration: none;
+	background-color: $brandBlue;
+	color: #fff;
+}
+.nextStopModal {
+	margin-right: 20px;
+}
+.modalMenuToggle span {
+	line-height: 25px;
+	padding: 0 0.5em;
+}
+.modalMenuToggle .nextText {
+	margin: 0;
+}
+.light {
+	border: 1px solid #fff;
+	color: #fff;
+}
+.externalLink::after {
+	content: '\f08e';
+	font-family: fontAwesome;
+	margin-left: 5px;
+}
+.nextSection a:hover, .ctaContainer a:hover, .nextSection a, .ctaContainer a {
+	transition: 0.25s ease-in-out;
+}
+.nextSection a:hover {
+	background-color: rgba(90, 150, 175, .75);
+}
+.ctaContainer a:hover {
+	color: rgba(90, 150, 175, .75);
+	transition: 0.25s ease-in-out;
+}
+.nextStop {
+	position: absolute;
+	bottom: 150px;
+	right: 0;
+}
