@@ -1958,7 +1958,7 @@
 			
 			<div class="modalInner">
 				<div class="iframeContainer virtualTour quadTour">
-					<iframe src="https://smu-virtual-tour.mspacecreative.com/tours/quad/index.htm" frameborder="0" title="The Quad"></iframe>
+					<embed src="https://smu-virtual-tour.mspacecreative.com/tours/quad/index.htm" frameborder="0" title="The Quad"></embed>
 				</div>
 			</div>
 			<div class="innerContainer fixedPosition">
@@ -2084,16 +2084,6 @@
 
         <!-- JQUERY LIBRARY -->
 		<script src="assets/js/jquery.js"></script>
-		<script>
-			function handleReceive(event){ 
-			    if(event.origin != "http://smu-virtual-tour.mspacecreative.com/tours/quad/index.htm")
-			        return; 
-			     //process data
-			     var otherAppFrame = document.getElementById("viewer") 
-			     otherAppFrame.postMessage('{status:'ok'}', 'https://smu-virtual-tour.mspacecreative.com');
-			}
-			window.addEventListener("message", handleReceive, false);
-		</script>
         <!--<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>-->
 		<!-- VIMEO API
 		<script src="https://player.vimeo.com/api/player.js"></script>
