@@ -76,14 +76,12 @@
 	});
 	
 	function stopAudio() {}
-		if ( window.parent != window.top ) {
-				var frames = window.frames;
-				for (var i = 0; i < frames.length; i++) { 
-				  var sounds = frames[i].document.getElementsByTagName('audio');
-				  for(j=0; j<sounds.length; j++){
-				    sounds[j].stop();
-				  }
-				}
+		var frames = window.frames;
+		for (var i = 0; i < frames.length; i++) { 
+			var sounds = frames[i].document.getElementsByTagName('audio');
+			for(j=0; j<sounds.length; j++) {
+				sounds[j].stop();
+			}
 		}
 	}
 	
@@ -92,17 +90,13 @@
 		$('body').removeClass('modalIsVisible');
 		
 		var modalVisible = $('.open'),
-		//currentVideo = modalVisible.find('video');
 		videoURL = modalVisible.find('iframe').attr('src'),
 		dataplay = modalVisible.find('iframe').attr('data-play');
-		
-		//currentVideo.trigger('stop');
 		
 		$(this).parent().parent().fadeOut().removeClass('open');
 		replaceURL = videoURL.replace("&autoplay=1", "");
 		modalVisible.find('.ytIframe').prop('src','');
 		modalVisible.find('.ytIframe').prop('src', replaceURL);
-		//modalVisible.find('.ytIframe').attr('data-play',0);
 		
 		stopAudio();
 
