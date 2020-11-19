@@ -76,7 +76,8 @@
 	});
 	
 	function stopAudio() {
-		window.document.embeds[0].Stop();
+		var stopVideo = documentgetElementsByTagName('embed');
+		stopVideo.find('video').stop();
 	}
 	
 	$('.closeModalButton').click(function() {
