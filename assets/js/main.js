@@ -75,6 +75,16 @@
 		     }
 	});
 	
+	window.parent.stopAudio() {
+			var frames = window.frames;
+			for (var i = 0; i < frames.length; i++) { 
+			  var sounds = frames[i].document.getElementsByTagName('audio');
+			  for(j=0; j<sounds.length; j++){
+			    sounds[j].stop();
+			  }
+			}
+		});
+	
 	$('.closeModalButton').click(function() {
 		
 		$('body').removeClass('modalIsVisible');
@@ -92,15 +102,8 @@
 		modalVisible.find('.ytIframe').prop('src', replaceURL);
 		//modalVisible.find('.ytIframe').attr('data-play',0);
 		
-		window.opener.MyParentFunction() {
-			var frames = window.frames;
-			for (var i = 0; i < frames.length; i++) { 
-			  var sounds = frames[i].document.getElementsByTagName('audio');
-			  for(j=0; j<sounds.length; j++){
-			    sounds[j].stop();
-			  }
-			}
-		});
+		stopAudio();
+
 	});
 	
 	$('.navigation li a').click(function() {
