@@ -103,8 +103,8 @@
 		*/
 		
 		var iframeURL = modalVisible.find('iframe').attr('src');
-		replaceIframeURL = iframeURL.prop("src", "");
-		replaceIframeURL.prop("src", iframeURL);
+		replaceIframeURL = iframeURL.attr("src", "");
+		replaceIframeURL.attr("src", iframeURL);
 	});
 	
 	$('.navigation li a').click(function() {
