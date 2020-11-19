@@ -103,7 +103,7 @@
 		*/
 		
 		var iframe = modalVisible.find('iframe');
-		iframeURL = modalVisible.find('iframe').attr('src');
+		iframeURL = iframe.attr('src');
 		iframe.attr("src", "").replace("src", iframeURL);
 	});
 	
