@@ -92,24 +92,15 @@
 		modalVisible.find('.ytIframe').prop('src', replaceURL);
 		//modalVisible.find('.ytIframe').attr('data-play',0);
 		
-		/*
-		var frames = window.frames;
-		for (var i = 0; i < frames.length; i++) { 
-		  var sounds = frames[i].document.getElementsByTagName('audio');
-		  for(j=0; j<sounds.length; j++){
-		    sounds[j].stop();
-		  }
-		}
-		*/
-		
-		var iframe = modalVisible.find('iframe');
-		iframeURL = iframe.attr('src');
-		
-		if ( modalVisible.length ) {
-			iframe.attr("src", "");
-		} else {
-			iframe.attr("src", iframeURL);
-		}
+		window.opener.MyParentFunction() {
+			var frames = window.frames;
+			for (var i = 0; i < frames.length; i++) { 
+			  var sounds = frames[i].document.getElementsByTagName('audio');
+			  for(j=0; j<sounds.length; j++){
+			    sounds[j].stop();
+			  }
+			}
+		});
 	});
 	
 	$('.navigation li a').click(function() {
