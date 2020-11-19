@@ -75,16 +75,6 @@
 		     }
 	});
 	
-	function stopAudio() {
-		var frames = window.frames;
-		for (var i = 0; i < frames.length; i++) { 
-			var videos = frames[i].document.getElementsByTagName('video');
-			for(j=0; j<sounds.length; j++) {
-				videos[j].stop();
-			}
-		}
-	}
-	
 	$('.closeModalButton').click(function() {
 		
 		$('body').removeClass('modalIsVisible');
@@ -98,7 +88,13 @@
 		modalVisible.find('.ytIframe').prop('src','');
 		modalVisible.find('.ytIframe').prop('src', replaceURL);
 		
-		stopAudio();
+		var frames = window.frames;
+		for (var i = 0; i < frames.length; i++) { 
+			var videos = frames[i].document.getElementsByTagName('video');
+			for(j=0; j<sounds.length; j++) {
+				videos[j].stop();
+			}
+		}
 
 	});
 	
