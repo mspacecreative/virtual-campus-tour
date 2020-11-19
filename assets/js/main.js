@@ -97,8 +97,8 @@
 			}
 		}
 		*/
-		var tourWrap = $('iframe');
-		tourWrap.html(tourWrap.html());
+		var currentTour = modalVisible.find('iframe');
+		currentTour.html(currentTour.html());
 
 	});
 	
