@@ -92,6 +92,7 @@
 		modalVisible.find('.ytIframe').prop('src', replaceURL);
 		//modalVisible.find('.ytIframe').attr('data-play',0);
 		
+		/*
 		var frames = window.frames;
 		for (var i = 0; i < frames.length; i++) { 
 		  var sounds = frames[i].document.getElementsByTagName('audio');
@@ -99,6 +100,10 @@
 		    sounds[j].stop();
 		  }
 		}
+		*/
+		
+		var iframeURL = modalVisible.find('iframe');
+		iframeURL.prop("src", "");
 	});
 	
 	$('.navigation li a').click(function() {
