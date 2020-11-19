@@ -76,8 +76,13 @@
 	});
 	
 	function stopAudio() {
-		var embedTag = document.getElementsByTagName('embed');
-		embedTag.find('audio').stop();
+		var frames = window.frames;
+		for (var i = 0; i < frames.length; i++) { 
+			var videos = frames[i].document.getElementsByTagName('video');
+			for(j=0; j<sounds.length; j++) {
+				videos[j].stop();
+			}
+		}
 	}
 	
 	$('.closeModalButton').click(function() {
