@@ -104,7 +104,7 @@
 		
 		var currentIframe = modalVisible.find('iframe');
 		currentIframe.html( currentIframe.html() );
-		currentIframe.html.attr("src", "");
+		//currentIframe.html.attr("src", "");
 	});
 	
 	$('.navigation li a').click(function() {
