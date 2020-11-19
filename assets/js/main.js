@@ -75,10 +75,6 @@
 		     }
 	});
 	
-	$(document).ready(function() {
-		$('.quadTour').load('http://smu-virtual-tour.mspacecreative.com/tours/quad/index.htm');
-	});
-	
 	function stopAudio() {
 		var frames = window.frames;
 		for (var i = 0; i < frames.length; i++) { 
