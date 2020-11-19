@@ -102,12 +102,10 @@
 		
 		var modalVisible = $('.open'),
 		hamburgerIcon = $('.hamburger'),
-		//bottomModalNav = modalVisible.next(),
 		videoURL = modalVisible.find('iframe').attr('src'),
 		dataplay = modalVisible.find('iframe').attr('data-play');
 		
 		modalVisible.fadeOut().removeClass('open');
-		//bottomModalNav.fadeOut();
 		replaceURL = videoURL.replace("&autoplay=1", "");
 		modalVisible.find('.ytIframe').prop('src','');
 		modalVisible.find('.ytIframe').prop('src', replaceURL);
@@ -164,6 +162,23 @@
 	        $('.modal').fadeOut();
 			$('html, body').removeClass('modalOpen');
 			$('header').css('opacity', '1');
+			
+			var modalVisible = $('.open'),
+			hamburgerIcon = $('.hamburger'),
+			videoURL = modalVisible.find('iframe').attr('src'),
+			dataplay = modalVisible.find('iframe').attr('data-play');
+			
+			modalVisible.fadeOut().removeClass('open');
+			replaceURL = videoURL.replace("&autoplay=1", "");
+			modalVisible.find('.ytIframe').prop('src','');
+			modalVisible.find('.ytIframe').prop('src', replaceURL);
+			
+			hamburgerIcon.removeClass('is-active');
+			
+			var iframe = modalVisible.find('iframe'),
+			iframeURL = iframe.attr('src');
+			iframe.attr("src", "");
+			iframe.attr("src", iframeURL);
 		}
 	});
 	
