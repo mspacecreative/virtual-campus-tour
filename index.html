@@ -1957,8 +1957,8 @@
 			</div>
 			
 			<div class="modalInner">
-				<div class="iframeContainer virtualTour">
-					<iframe src="https://smu-virtual-tour.mspacecreative.com/tours/quad/index.htm" frameborder="0" title="The Quad"></iframe>
+				<div class="iframeContainer virtualTour quadTour">
+					
 				</div>
 			</div>
 			<div class="innerContainer fixedPosition">
@@ -2083,7 +2083,8 @@
 		<!-- / CLOSING VIDEO MODAL -->
 
         <!-- JQUERY LIBRARY -->
-		<script src="assets/js/jquery.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!--<script src="assets/js/jquery.js"></script>-->
         <!--<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>-->
 		<!-- VIMEO API
 		<script src="https://player.vimeo.com/api/player.js"></script>
@@ -2094,6 +2095,16 @@
 		<script src="assets/js/class-on-scroll.js" type="text/javascript"></script> -->
 		<!-- ANIMATE ON SCROLL -->
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			function handleReceive(event){ 
+			    if(event.origin != "http://smu-virtual-tour.mspacecreative.com/tours/quad/index.htm")
+			        return; 
+			     //process data
+			     var otherAppFrame = document.getElementById(“otherApp”) 
+			     otherAppFrame.postMessage('{status:'ok'}', 'https://smu-virtual-tour.mspacecreative.com');
+			}
+			window.addEventListener("message", handleReceive, false);
+		</script>
 		
 		<!--<script src="https://www.youtube.com/iframe_api" type="text/javascript"></script>
 		<script>
