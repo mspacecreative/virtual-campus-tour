@@ -75,18 +75,15 @@
 		     }
 	});
 	
-	
-	/*
 	function stopAudio() {}
 		var frames = window.frames;
 		for (var i = 0; i < frames.length; i++) { 
-			var sounds = frames[i].document.getElementsByTagName('audio');
+			var videos = frames[i].document.getElementsByTagName('video');
 			for(j=0; j<sounds.length; j++) {
-				sounds[j].stop();
+				videos[j].stop();
 			}
 		}
 	}
-	*/
 	
 	$('.closeModalButton').click(function() {
 		
@@ -101,7 +98,7 @@
 		modalVisible.find('.ytIframe').prop('src','');
 		modalVisible.find('.ytIframe').prop('src', replaceURL);
 		
-		pauseTour();
+		stopAudio();
 
 	});
 	
