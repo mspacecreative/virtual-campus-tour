@@ -97,7 +97,7 @@
 			}
 		}
 		*/
-		tourWrap = $('iframe');
+		var tourWrap = $('iframe');
 		tourWrap.html(tourWrap.html());
 
 	});
