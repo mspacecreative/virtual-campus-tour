@@ -102,9 +102,9 @@
 		}
 		*/
 		
-		var iframeURL = modalVisible.find('iframe').attr('src');
-		replaceIframeURL = iframeURL.attr("src", "");
-		replaceIframeURL.attr("src", iframeURL);
+		var iframe = modalVisible.find('iframe');
+		iframeURL = modalVisible.find('iframe').attr('src');
+		iframe.attr("src", "").replace("src", iframeURL);
 	});
 	
 	$('.navigation li a').click(function() {
