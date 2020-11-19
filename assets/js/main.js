@@ -77,7 +77,7 @@
 	
 	function stopAudio() {
 		var embedTag = document.getElementsByTagName('embed');
-		embedTag.find('video').stop();
+		embedTag.find('audio').stop();
 	}
 	
 	$('.closeModalButton').click(function() {
