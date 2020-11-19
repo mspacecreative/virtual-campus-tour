@@ -2089,7 +2089,7 @@
 			    if(event.origin != "http://smu-virtual-tour.mspacecreative.com/tours/quad/index.htm")
 			        return; 
 			     //process data
-			     var otherAppFrame = document.getElementById(“otherApp”) 
+			     var otherAppFrame = document.getElementById("viewer") 
 			     otherAppFrame.postMessage('{status:'ok'}', 'https://smu-virtual-tour.mspacecreative.com');
 			}
 			window.addEventListener("message", handleReceive, false);
