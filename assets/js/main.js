@@ -98,6 +98,18 @@
 
 	});
 	
+	$(document).ready(function(){
+
+	    
+	        
+			$.post("https://smu-virtual-tour.mspacecreative.com/tours/quad/index.htm", function(data){
+
+		    	$("#quadTour").html(data).fadeIn();
+		
+			});
+	
+	});
+	
 	$('.navigation li a').click(function() {
 		
 		$('body').removeClass('modalIsVisible showVerticalNav is-active');
