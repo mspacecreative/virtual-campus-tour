@@ -104,7 +104,12 @@
 		
 		var iframe = modalVisible.find('iframe');
 		iframeURL = iframe.attr('src');
-		iframe.attr("src", "").replace("src", iframeURL);
+		
+		if ( modalVisible.length ) {
+			iframe.attr("src", "");
+		} else {
+			iframe.attr("src", iframeURL);
+		}
 	});
 	
 	$('.navigation li a').click(function() {
