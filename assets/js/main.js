@@ -97,9 +97,8 @@
 			}
 		}
 		*/
-		var iframe = $('iframe').get(0);
-	    var player = new Vimeo.Player(iframe);
-	    player.pause();
+		tourWrap = $('iframe');
+		tourWrap.html(tourWrap.html());
 
 	});
 	
