@@ -76,8 +76,8 @@
 	});
 	
 	function stopAudio() {
-		var stopVideo = documentgetElementsByTagName('embed');
-		stopVideo.find('video').stop();
+		var embedTag = document.getElementsByTagName('embed');
+		embedTag.find('video').stop();
 	}
 	
 	$('.closeModalButton').click(function() {
