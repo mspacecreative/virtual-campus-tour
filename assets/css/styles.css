@@ -1727,6 +1727,8 @@ html, body {
 
 .maxColWidth, .maxColWidth400 {
 	max-width: 400px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .sectionBlurb.col-sm-5 > .translucentBg::after, .sectionBlurb.col-sm-5 > .translucentBg::before {
@@ -2597,9 +2599,11 @@ header.fixed .logo .st0 {
 	cursor: pointer;
 }
 
+/*
 html.modalOpen {
 	overflow-y: hidden;
 }
+*/
 
 .modalInner {
 	width: 100%;
@@ -2983,6 +2987,32 @@ html.modalOpen {
 
 .smallPortal .portalImgContainer:hover .iconContainer {
 	transform: scale(1.1) translate(-50%, -50%);
+}
+
+.openModal:focus, .openModal:focus-visible, .openModal:active {
+	outline: 3px solid #5a96af;
+}
+
+body.using-mouse *:focus {
+	outline: none !important;
+}
+
+.openModal {
+	display: block;
+}
+
+/*
+.openModal {
+	display: flex;
+	flex-direction: column;
+}
+.alignItemsCenter {
+	align-items: center;
+}
+*/
+
+.alignItemsCenter > div {
+	margin: auto;
 }
 
 @media (max-width: 1280px) {

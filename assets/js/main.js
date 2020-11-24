@@ -1,5 +1,17 @@
 (function ($) {
 	
+	// REMOVE OUTLINE ON CLICKABLE ITEMS WHEN USING MOUSE
+	document.body.addEventListener('mousedown', function() {
+		document.body.classList.add('using-mouse');
+	});
+	
+	// Re-enable focus styling when Tab is pressed
+	document.body.addEventListener('keydown', function(event) {
+		if (event.keyCode === 9) {
+			document.body.classList.remove('using-mouse');
+		}
+	});
+	
 	// HAMBURGER MENU
 	$('.hamburger').click(function() {
 		// ADD IS-ACTIVE CLASS TO ICON
@@ -37,8 +49,22 @@
 	});
 	
 	// NEXT STOP BUTTONS
-	var modalVisible = $('.open');
 	$('.nextStopModal').click(function() {
+		
+		var modalVisible = $('.open'),
+		videoURL = modalVisible.find('iframe').attr('src'),
+		dataplay = modalVisible.find('iframe').attr('data-play');
+		
+		$(this).parent().parent().fadeOut().removeClass('open');
+		replaceURL = videoURL.replace("&autoplay=1", "");
+		modalVisible.find('.ytIframe').prop('src','');
+		modalVisible.find('.ytIframe').prop('src', replaceURL);
+		
+		var iframe = modalVisible.find('iframe'),
+		iframeURL = iframe.attr('src');
+		iframe.attr("src", "");
+		iframe.attr("src", iframeURL);
+		
 		modalVisible.fadeOut();
 	});
 	

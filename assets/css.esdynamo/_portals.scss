@@ -269,3 +269,25 @@
 .smallPortal .portalImgContainer:hover .iconContainer {
 	transform: scale(1.1) translate(-50%,-50%);
 }
+
+.openModal:focus, .openModal:focus-visible, .openModal:active {
+	outline: 3px solid $brandBlue;
+}
+body.using-mouse *:focus {
+	outline: none!important;
+}
+.openModal {
+	display: block;
+}
+/*
+.openModal {
+	display: flex;
+	flex-direction: column;
+}
+.alignItemsCenter {
+	align-items: center;
+}
+*/
+.alignItemsCenter > div {
+	margin: auto;
+}

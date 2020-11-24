@@ -28,6 +28,8 @@ html, body {
 
 .maxColWidth, .maxColWidth400 {
 	max-width: 400px;
+	margin-right: auto;
+    margin-left: auto;
 }
 
 .sectionBlurb.col-sm-5 > .translucentBg::after, .sectionBlurb.col-sm-5 > .translucentBg::before {
