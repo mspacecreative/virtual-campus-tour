@@ -2727,9 +2727,6 @@ html.modalOpen {
 }
 
 .innerPortal, .innerPortalLarge, .innerPortalSmall, .portalImgContainer {
-	/*opacity: 0;
-	visibility: hidden;
-	transition: opacity 1s ease-in-out 0s;*/
 	border-radius: 100%;
 	overflow: hidden;
 }
@@ -2738,17 +2735,6 @@ html.modalOpen {
 	border-width: 15px;
 	border-style: solid;
 }
-
-/*.in-viewport .innerPortal, .innerPortalLarge.in-viewport, .innerPortalSmall.in-viewport, .in-viewport .portalImgContainer {
-	opacity: 1;
-	visibility: visible;
-	transition: opacity 1s ease-in-out 0s;
-}
-.innerPortal.in-viewport {
-	opacity: 1;
-	visibility: visible;
-	transition: 1s ease-in-out;
-}*/
 
 .in-viewport .portalImgContainer, .innerPortal.in-viewport {
 	transition-delay: 0.5s;
@@ -2858,11 +2844,6 @@ html.modalOpen {
 	align-self: flex-end;
 }
 
-/*.smallPortal {
-	width: 250px;
-	height: 250px;
-}*/
-
 .upperRight {
 	align-self: flex-start;
 	margin-top: -100px;
@@ -2906,10 +2887,6 @@ html.modalOpen {
 
 .portalContainer {
 	border-radius: 100%;
-	  /*
-		background-color: #fff;
-		animation: float 6s ease-in-out infinite;
-		border: 20px solid #fff;*/
 }
 
 .portalImgContainer {
@@ -2993,8 +2970,8 @@ html.modalOpen {
 	outline: 3px solid #5a96af;
 }
 
-body.using-mouse *:focus {
-	outline: none !important;
+body.using-mouse *:focus, body.using-mouse .openModal:focus, body.using-mouse .openModal:focus-visible, body.using-mouse .openModal:active {
+	outline: none;
 }
 
 .openModal {

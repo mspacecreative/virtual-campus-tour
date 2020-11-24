@@ -1,23 +1,17 @@
 // PORTAL FLOATING
 @keyframes float {
 	0% {
-		//box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
 	}
 	50% {
-		//box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
 		transform: translatey(-20px);
 	}
 	100% {
-		//box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
 	}
 }
 
 .innerPortal, .innerPortalLarge, .innerPortalSmall, .portalImgContainer {
-	/*opacity: 0;
-	visibility: hidden;
-	transition: opacity 1s ease-in-out 0s;*/
 	border-radius: 100%;
 	overflow: hidden;
 }
@@ -25,16 +19,6 @@
 	border-width: 15px;
 	border-style: solid;
 }
-/*.in-viewport .innerPortal, .innerPortalLarge.in-viewport, .innerPortalSmall.in-viewport, .in-viewport .portalImgContainer {
-	opacity: 1;
-	visibility: visible;
-	transition: opacity 1s ease-in-out 0s;
-}
-.innerPortal.in-viewport {
-	opacity: 1;
-	visibility: visible;
-	transition: 1s ease-in-out;
-}*/
 .in-viewport .portalImgContainer, .innerPortal.in-viewport {
 	transition-delay: 0.5s;
 }
@@ -140,11 +124,6 @@
 	align-self: flex-end;
 }
 
-// SMALL PORTALS
-/*.smallPortal {
-	width: 250px;
-	height: 250px;
-}*/
 .upperRight {
 	align-self: flex-start;
 	margin-top: -100px;
@@ -178,15 +157,6 @@
 	animation: float 5s ease-in-out infinite;
 }
 
-// BUSINESS CONTAINER
-
-
-// ARTS CONTAINER
-
-
-// SCIENCE CONTAINER
-
-
 // INTRO VIDEO
 #intro-video .animatedLineWrapper.firstLine {
 	transform: rotate(-22deg);
@@ -195,10 +165,6 @@
 // PORTAL OVERLAYS
 .portalContainer {
 	border-radius: 100%;
-	/*
-	background-color: #fff;
-	animation: float 6s ease-in-out infinite;
-	border: 20px solid #fff;*/
 }
 .portalImgContainer {
 	position: relative;
@@ -273,8 +239,8 @@
 .openModal:focus, .openModal:focus-visible, .openModal:active {
 	outline: 3px solid $brandBlue;
 }
-body.using-mouse *:focus {
-	outline: none!important;
+body.using-mouse *:focus, body.using-mouse .openModal:focus, body.using-mouse .openModal:focus-visible, body.using-mouse .openModal:active {
+	outline: none;
 }
 .openModal {
 	display: block;
