@@ -1406,6 +1406,11 @@ p:last-of-type {
 	right: 0;
 }
 
+.modal button:focus {
+	outline: 2px solid #5a96af;
+	border-radius: 4px;
+}
+
 .percentage {
 	position: fixed;
 	top: 0;

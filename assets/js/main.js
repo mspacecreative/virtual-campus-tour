@@ -1,5 +1,27 @@
 (function ($) {
 	
+	var findInsiders = function (elem) {
+		var tabbable = elem.find('a').filter(':visible');
+		var firstTabbable = tabbable.first();
+		var lastTabbable = tabbable.last();
+		/*set focus on first input*/
+	    firstTabbable.focus();
+		/*redirect last tab to first input*/
+	    lastTabbable.on('keydown', function(e) {
+			if ((e.which === 9 && !e.shiftKey)) {
+				e.preventDefault();
+				firstTabbable.focus();
+			}
+		});
+		/*redirect first shift+tab to last input*/
+	    firstTabbable.on('keydown', function(e) {
+			if ((e.which === 9 && e.shiftKey)) {
+				e.preventDefault();
+				lastTabbable.focus();
+			}
+		});
+	};
+	
 	// REMOVE OUTLINE ON CLICKABLE ITEMS WHEN USING MOUSE
 	document.body.addEventListener('mousedown', function() {
 		document.body.classList.add('using-mouse');
@@ -81,6 +103,7 @@
 			//bottomModalNav = modalVisible.next(),
 		    videoURL = modalVisible.find('iframe').attr('src'),
             dataplay = modalVisible.find('iframe').attr('data-play');
+			modalVisible.find('.externalLink').focus();
 			
 			//bottomModalNav.fadeIn();
 		
