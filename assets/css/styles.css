@@ -1308,6 +1308,7 @@ p {
 	background-color: #fff;
 	font-size: 24px;
 	position: relative;
+	padding: 1em;
 }
 
 .lineRules {
@@ -2303,20 +2304,20 @@ header {
 	line-height: 36px;
 }
 
-header {
+header.fixed {
 	width: 100%;
 	transition: 0.25s ease-in-out;
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	z-index: 2;
-}
-
-header.fixed {
 	padding: 15px 0;
-	transition: 0.25s ease-in-out;
 	background-color: #6e0408;
 	z-index: 9999;
+}
+
+header.scroll {
+	position: absolute;
+	bottom: 0;
 }
 
 .spacer {
@@ -2586,6 +2587,16 @@ header.fixed .logo .st0 {
 		visibility: visible;
 		background-color: #6e0408;
 	}
+}
+
+header.fixed.reveal {
+	transition: 0.25 ease-in-out;
+	transform: translateY(0);
+}
+
+header.fixed {
+	transition: 0.25 ease-in-out;
+	transform: translateY(66px);
 }
 
 .modal {

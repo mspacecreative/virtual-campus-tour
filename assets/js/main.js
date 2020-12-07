@@ -1,7 +1,24 @@
 (function ($) {
 	
+	// bind a click event to the 'skip' link
+    $(".navigation a").keydown(function(event) {
+
+        // strip the leading hash and declare
+        // the content we're skipping to
+        var skipTo = "#" + this.href.split('#')[1];
+
+        // Setting 'tabindex' to -1 takes an element out of normal 
+        // tab flow but allows it to be focused via javascript
+        $(skipTo).attr('tabindex',  -1).on('blur focusout', function() {
+
+            // when focus leaves this element, 
+            // remove the tabindex attribute
+            $(this).removeAttr('tabindex');
+		}).focus(); // focus on the content container
+	});
+	
 	var findInsiders = function (elem) {
-		var tabbable = elem.find('a').filter(':visible');
+		var tabbable = elem.find('select, input, textarea, button, a').filter(':visible');
 		var firstTabbable = tabbable.first();
 		var lastTabbable = tabbable.last();
 		/*set focus on first input*/
@@ -20,7 +37,19 @@
 				lastTabbable.focus();
 			}
 		});
+		/* allow escape key to close insiders div */
+	    elem.on('keyup', function(e) {
+			if (e.keyCode === 27) {
+				elem.hide();
+			};
+		});
 	};
+	
+	$('.closeModalButton').click(function(e) {
+		console.log("klikk");
+		e.preventDefault();
+		$('.insiders').hide();
+	});
 	
 	// REMOVE OUTLINE ON CLICKABLE ITEMS WHEN USING MOUSE
 	document.body.addEventListener('mousedown', function() {
@@ -93,6 +122,10 @@
 	// VIDEO MODAL
 	$('.openModal').click(function(e) {
 		e.preventDefault();
+		
+		$('.insiders').show();
+		findInsiders($('.insiders'));
+		
 		var id = $(this).attr('id');
 		
 		$('body').addClass('modalIsVisible');
@@ -209,7 +242,7 @@
 	$(document).keyup(function(e) {
 		if (e.key === "Escape") { // escape key maps to keycode `27`
 	        $('.modal').fadeOut();
-			$('html, body').removeClass('modalOpen');
+			$('html, body').removeClass('modalOpen modalIsVisible');
 			$('header').css('opacity', '1');
 			
 			var modalVisible = $('.open'),
@@ -218,6 +251,7 @@
 			dataplay = modalVisible.find('iframe').attr('data-play');
 			
 			modalVisible.fadeOut().removeClass('open');
+			$('body').removeClass('modalIsVisible');
 			replaceURL = videoURL.replace("&autoplay=1", "");
 			modalVisible.find('.ytIframe').prop('src','');
 			modalVisible.find('.ytIframe').prop('src', replaceURL);
@@ -292,6 +326,7 @@
 	});
 	
 	// FIX HEADER ON SCROLL
+	/*
 	function stickyHeader() {
 		$('header').toggleClass('fixed');
 	}
@@ -302,6 +337,21 @@
 	    }
 	    else {
 	        $('header').removeClass('fixed');
+	    }  
+	});
+	*/
+	
+	// FIX HEADER ON SCROLL
+	function stickyHeader() {
+		$('header.fixed').toggleClass('reveal');
+	}
+	
+	$(window).scroll(function() {  
+	    if ( $(window).scrollTop() > 150 ) {
+	        $('header.fixed').addClass('reveal');
+	    }
+	    else {
+	        $('header.fixed').removeClass('reveal');
 	    }  
 	});
 	
