@@ -8,36 +8,26 @@
 	z-index: 999999;
 	background-color: rgba(0,0,0,.95);
 	cursor: pointer;
-	//height: calc(100% - 55px);
 }
-
-// FIX HTML WHILE OVERLAY IS VISIBLE
-/*
-html.modalOpen {
-	overflow-y: hidden;
-}
-*/
 .modalInner {
 	width: 100%;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	/*max-width: 1080px;*/
 	margin: auto;
-	//padding: 0 2em;
+}
+.modalInner.tourModal {
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50vw,-50vh);
 }
 .iframeContainer {
 	height: 0;
 	position: relative;
 	padding-bottom: 56.25%;
-	/*max-width: 1280px;
-	margin-right: auto;
-	margin-left: auto;*/
 }
 .iframeContainer.anamorphic {
-	/*height: 100%;
-	width: 100%;*/
 	padding-bottom: 42.5%;
 	
 }
